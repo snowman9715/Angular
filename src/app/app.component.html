@@ -1,0 +1,125 @@
+<!-- <h1>*ngFor Objs</h1>
+<div>
+  <div *ngFor="let product of products">
+    <img width="200px" [src]="product.image" alt="image">
+    <h2>{{product.price}}</h2>
+    <p>{{product.name}}</p>
+    <hr>
+  </div>
+</div>
+<br>
+<h1>*ngFor</h1>
+
+<input type="text" required [(ngModel)]="newName">
+<button (click)="addName()">Add name</button>
+
+<hr>
+<ul>
+  <div *ngIf="names.length === 0">Empty List</div>
+  <li *ngFor="let name of names; index as i">
+    {{i}} {{name}}
+    <button (click)="deleteName(i);">Delete</button>
+  </li>
+</ul>
+<hr>
+<h1>*ngIf</h1>
+<input type="text" required #nameInput2 ='ngModel' [(ngModel)]="person.name">
+<p *ngIf="person.name === 'giuseppe'">I'm Giuseppe</p>
+<p *ngIf="person.name === 'renzo' && person.age === 23; else elseBlock">I'm Renzo</p>
+<ng-template #elseBlock>
+  <p>Else Block</p>
+</ng-template>
+
+<hr>
+<h1>Ng Model</h1>
+<p>Nombre: {{person.name}}</p>
+<input type="text" required #nameInput ='ngModel' [(ngModel)]="person.name">
+<p>Valid: {{nameInput.valid}}</p>
+
+<p>Age: {{person.name}}</p>
+<input type="number" max="18" min="2" required #ageInput ='ngModel' [(ngModel)]="person.age">
+<p>Valid: {{ageInput.valid}}</p>
+
+
+<hr>
+<h1>Events</h1>
+
+<button [disabled]="btnDisabled">Send</button>
+<button (click)="toggleButton()">Toggle Button</button>
+<p>Age {{person.age}}</p>
+<button (click)="increaseAge()">age++</button>
+<div class="box" (scroll)="onScroll($event)">
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos unde minus illum provident autem amet, error asperiores laudantium sapiente ratione mollitia ea quos aliquid beatae ad enim quae repellendus tempore.</p>
+</div>
+<p>Nombre {{person.name}}</p>
+<input type="text" [value]="person.name" (keyup)="changeName($event)">
+<hr>
+
+<h1>Properties</h1>
+<button [disabled]="btnDisabled">Send</button>
+<input type="text" [value]="person.name">
+<br>
+<img width="100px" [src]="person.img" alt="">
+<progress max="40" [value]="person.age"></progress>
+
+<hr>
+
+<h1>Hi World</h1>
+<h2>{{'Hi World'.repeat(10)}}</h2>
+<p>3 + 3 = {{3+3}}</p>
+<h3>Hi, I'm {{name + ' and I\'m ' +age }}</h3>
+<img src={{img}} alt="">
+-->
+<h1>Login</h1>
+<app-login></app-login>
+<hr>
+<h1>Class & Style</h1>
+<input type="text" required #nameInput2="ngModel" [(ngModel)]="person.name">
+<p class="message-error" [class.invalid]="nameInput2.invalid">The information is required</p>
+<p [style.font-style]="nameInput2.invalid? 'italic':'normal'">kelokemmuevo</p>
+<hr>
+<input type="number" [(ngModel)]="widthImg">
+<img [style.width.px]='widthImg' [src]="person.image" alt="">
+
+<hr>
+<h1>*ngSwitch</h1>
+<input type="text" required [(ngModel)]="person.name">
+<div [ngSwitch]="person.name">
+  <p *ngSwitchCase="'Giuseppe'">Eres el administrador </p>
+  <p *ngSwitchCase="'elma'">You're Giuseppe's girlfriend</p>
+  <p *ngSwitchCase="'renzo'">Eres el hermano de Giuseppe</p>
+  <p *ngSwitchCase="'viviana'">Sei la mamma dell'amministratore </p>
+  <p *ngSwitchDefault>Who are you?</p>
+</div>
+
+
+<hr>
+<h1>*ngFor</h1>
+<div class="products--grid" >
+  <div *ngFor="let product of products">
+    <img width="200px" [src]="product.image" alt="">
+    <h2>{{product.price}}</h2>
+    <p>{{product.name}}</p>
+
+  </div>
+</div>
+
+<hr>
+<h1>Properties</h1>
+<h3>My name is {{person.name}}</h3>
+<button [disabled]="btnDisabled">Enviar</button>
+<!--<input type="text" [value]="person.name" (keyup)="changeName($event)">  Trasformando biding e eventi in NgModel e non si usa piu una funzione -->
+<input type="text" required #nameInput="ngModel" [(ngModel)]="person.name">
+<p>Valid: {{nameInput.valid}}</p>
+<button (click)="toggleBtn()">Toggle button</button>
+
+<p>Age: {{person.age}}</p>
+<img width="100px" src={{person.image}} alt="">
+<br>
+<button (click)="ageDown()">-</button>
+<progress max="55" [value]="person.age"></progress>
+<button (click)="ageUp()">+</button>
+<p *ngIf="person.age>17; else elseBlock">Maggiorenne</p> 
+<ng-template #elseBlock><br><br> Minorenne</ng-template>
+
+    

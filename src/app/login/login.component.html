@@ -1,0 +1,14 @@
+
+<div>
+    <label for="userId">User Id:</label>
+    <input type="text" id="userId" [(ngModel)]="userid" placeholder="Nome Utente">
+    
+    <label for="password">Password:</label>
+    <input type="password" id="password" [(ngModel)]="password" placeholder="Password">
+    
+    <button (click)="gestAut()" >Connetti</button>
+</div>
+<div *ngIf="!autenticato;else elseBlock ">
+    {{error_message}}
+</div>
+<ng-template #elseBlock>{{bienvenido}}</ng-template>
