@@ -16,7 +16,7 @@ error_message:string="User ID e/o Password errata";
   gestAut(){
     console.log(this.userid )
     if (this.userid==='Giuseppe' && this.password==='ciao') {
-      this.autenticato=!this.autenticato;
+      this.autenticato=true;
       this.bienvenido='Bienvenido';
     }
     else{
