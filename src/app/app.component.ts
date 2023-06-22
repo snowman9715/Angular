@@ -78,7 +78,21 @@ export class AppComponent {
   deleteName(index:number){
     this.names.splice(index,1);
   }*/
+register={
+  name:'',
+  password:'',
+  email:''
 
+}
+onRegister(){
+  console.log(this.register)
+}
+
+  box ={
+    width:100,
+    height:100,
+    background:'gray'
+  }
   person={
     name:'Giuseppe',
     age:25,
